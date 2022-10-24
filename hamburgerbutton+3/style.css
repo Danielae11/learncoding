@@ -1,0 +1,186 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, .container, .content, section, a, .toggle {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    width: 600px;
+    height: 100vh;
+    background: radial-gradient(#FEB8C8 -300px, #432028);
+    transition: all 0.8s ease-in;
+    transition-delay: 1.45s;
+    perspective: 1000px;
+}
+
+.content {
+    width: 22rem;
+    height: 22rem;
+    border-radius: 50%;
+    position: relative;
+    padding: 3rem;
+    animation: anim 1.6s ease-out;
+}
+
+@keyframes anim {
+    from {
+        transform: translateY(-120%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+section {
+    position: absolute;
+    width: 5.9rem;
+    height: 5.9rem;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.container-home {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.container-home.active {
+    top: 0;
+    transform: translateY(0%);
+}
+.container-user {
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    transition-delay: 0.2s;
+}
+.container-user.active {
+    right: 5.5%;
+    top: 17%;
+    transform: translate(0%, 0%);
+}
+.container-chat {
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    transition-delay: 0.4s;
+}
+.container-chat.active {
+    right: 5.5%;
+    bottom: 17%;
+    transform: translate(0%, 0%);
+}
+.container-cart {
+    bottom: 50%;
+    transform: translateY(50%);
+    transition-delay: 0.6s;
+}
+.container-cart.active {
+    bottom: 0;
+    transform: translateY(0%);
+}
+
+.container-payment {
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    transition-delay: 0.8s;
+}
+.container-payment.active {
+    left: 5.5%;
+    bottom: 17%;
+    transform: translate(0%, 0%);
+}
+.container-setting {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition-delay: 1s
+}
+.container-setting.active {
+    left: 5.5%;
+    top: 17%;
+    transform: translate(0%, 0%);
+}
+
+a {
+    width: 5.9rem;
+    height: 5.9rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color:#FEB8C8;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #432028;
+    transition: all 0.3s ease-out;
+    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.3), inset -5px -5px 8px rgba(255, 255, 255, 0.6);
+}
+
+i {
+    font-size: 1.8rem;
+    transition: all 0.3s ease-in-out;
+}
+
+h1 {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    font-size: 1.3rem;
+    transition: all 0.3s ease-in-out; 
+}
+
+a, i, h1 {
+    transform-style: preserve-3d;
+}
+
+.toggle {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: #F4DDDB;
+    position: absolute;
+    cursor: pointer;
+    flex-direction: column;
+    transition: all 1.3s ease-in-out;
+    transition-delay: 0.38s;
+}
+
+.toggle.add {
+    transform: rotate(45deg);
+    background-color: #FEB8C8;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3), inset -3px -3px 8px rgba(255, 255, 255, 0.6);
+}
+
+.line {
+    width: 40px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #432028;
+    transition: all 1.3s ease-in-out;
+    margin-bottom: 3px;
+}
+
+.line.add:nth-child(1) {
+    transform: translateY(9px);
+}
+
+.line.add:nth-child(2) {
+    width: 0;
+    transform: translateX(-45px);
+}
+
+.line.add:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
+}
+
