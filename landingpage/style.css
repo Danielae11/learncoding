@@ -1,0 +1,662 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 125vh;
+    background: linear-gradient(45deg, #E22955, #36303C);
+    display: flex;
+    position: relative;
+    /*overflow: hidden;*/
+}
+
+:root {
+    --color-one : #36303C;
+    --color-two : #E2D4FF;
+    --color-three : #E22955;
+    --color-four : #FFFFFF;
+}
+
+.logo {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color-three);
+    font-family: 'Squada One', cursive;
+}
+
+.nav-container {
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    background: linear-gradient(-45deg, rgba(54, 48, 59, 0.3), rgba(54, 48, 59, 1));
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0  1rem;
+}
+
+.nav-content {
+    width: 100%;
+    height: 27%;
+    transform: translateY(16%);
+    margin-bottom: 19%;
+    color: var(--color-four);
+}
+
+.social {
+    transform: translateY(29%);
+}
+
+.nav-content h1 {
+    margin-bottom: 2.5%;
+    font-size: 2.2rem;
+    font-family: 'Teko', sans-serif;
+}
+
+.container-button {
+    display: flex;
+    align-items: center;
+}
+
+.container-button i {
+    font-size: 1.4rem;
+    margin-right: 7%;
+}
+
+.container-button h2 {
+    font-family: 'Teko', sans-serif;
+    font-weight: lighter;
+    font-size: 2rem;
+}
+
+.container-main {
+    width: 61%;
+    height: 100vh;
+    position: relative;
+    left: 51%;
+    transform: translateX(-50%);
+}
+
+.genre {
+    width: 100%;
+    height: 12%;
+    background-color: var(--color-one);
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+}
+
+.genre a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Teko', sans-serif;
+    color: var(--color-four);
+    font-weight: bold;
+}
+
+.search-box {
+    width: 25%;
+    height: 45%;
+    align-items: center;
+    display: flex;
+    background-color: var(--color-four);
+    border-radius: 10px;
+    position: relative;
+}
+
+.search-box input {
+    width: 60%;
+    border: none;
+    outline: none;
+    background: none;
+    margin-left: 7%;
+    font-size: 1rem;
+}
+
+.search-box i {
+    width: 23%;
+    height: 100%;
+    background-color: var(--color-three);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 0px 10px 10px 0px;
+    right: -0.6%;
+    position: absolute;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.box-slide {
+    width: 100%;
+    height: 50%;
+    margin-top: 1%;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+}
+
+.doctor-strange {
+    background: url(./img/doctorstrange.jpg) no-repeat center / cover;
+    width: 100%;
+    height: 100%;
+}
+
+.description {
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(-45deg, rgba(54, 48, 59, 0.3), rgba(54, 48, 59, 1));
+    background-color: transparent;
+    backdrop-filter: blur(1px);
+    color: var(--color-four);
+    padding: 0.4rem;
+}
+
+.description h1 {
+    color: var(--color-three);
+    font-family: 'Squada One', cursive;
+    margin-top: 4%;
+}
+
+.description h3 {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+}
+
+.description h2 {
+    font-family: 'Teko', sans-serif;
+    font-weight: bold;
+}
+
+.description p {
+    font-family: 'Teko', sans-serif;
+    font-weight: lighter;
+    margin-bottom: 7%;
+}
+
+.publised {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.publised i, .duration i {
+    margin-right: 10%;
+    font-size: 1.2rem;
+}
+
+.publised h2 {
+    margin-top: 4%;
+    font-weight: lighter;
+    font-family: 'Teko', sans-serif;
+}
+
+.duration {
+    width: 80%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.duration h2 {
+    margin-top: 2%;
+    font-weight: lighter;
+    font-family: 'Teko', sans-serif;
+}
+
+.duration i {
+    margin-right: 5%;
+    font-size: 1.2rem;
+}
+
+.button-description {
+    width: 100%;
+    height: 20%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.button-description button {
+    width: 48.5%;
+    height: 60%;
+    background-color: var(--color-three);
+    border: none;
+    border-radius: 10px;
+    color: var(--color-four);
+    font-family: 'Squada One', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.dot-slide {
+    position: absolute;
+    width: 20%;
+    height: 5%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--color-four);
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.155), rgba(0, 0, 0, 0.1));
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.active {
+    background-color: var(--color-four);
+}
+
+.recomended {
+    width: 100%;
+    height: 45%;
+    margin-top: 7%;
+    justify-content: space-between;
+    display: flex;
+    position: relative;
+}
+
+.text-recomended {
+    position: absolute;
+    font-family: 'Teko', sans-serif;
+    font-size: 2.3rem;
+    color: var(--color-four);
+}
+
+.recomended-film {
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #36303C;
+    bottom: 0;
+}
+
+.deadpool {
+    background: url(./img/deadpool.jpg) no-repeat center / cover;
+}
+
+.star-wars {
+    background: url(./img/starwars.jpg) no-repeat center / cover;
+}
+
+.black-widow {
+    background: url(./img/blackwidow.jpg) no-repeat center / cover;
+}
+
+.deadpool, .star-wars, .black-widow {
+    position: relative;
+}
+
+.description-recomended {
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(-45deg, rgba(54, 48, 59, 0.6), rgba(54, 48, 59, 0.8));
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    bottom: 0;
+    border-radius: 0px 0px 10px 10px;
+    padding: 0 0.5rem;
+}
+
+.description-recomended h1 {
+    font-family: 'Squada One', cursive;
+    color: var(--color-two);
+    font-size: 1.6rem;
+}
+
+.description-recomended h3 {
+    font-family: 'Teko', sans-serif;
+    font-weight: lighter;
+    color: var(--color-four);
+    font-size: 1.2rem;
+}
+
+.star-recomended {
+    width: 23%;
+    height: 30%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 4%;
+    right: 4%;
+}
+
+.star-recomended i {
+    color: var(--color-two);
+}
+
+.star-recomended h2 {
+    font-family: 'Teko', sans-serif;
+    color: var(--color-four);
+    font-weight: lighter;
+}
+
+.button-recomended {
+    width: 100%;
+    height: 40%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.button-recomended button {
+    width: 48.5%;
+    height: 100%;
+    background-color: var(--color-three);
+    border: none;
+    border-radius: 10px;
+    color: var(--color-four);
+    font-family: 'Squada One', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.container-clone {
+    width: 17.5%;
+    height: 70%;
+    position: absolute;
+    right: 0.5%;
+    top: 1%;
+    border-radius: 10px;
+    border: 2px solid var(--color-four);
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.1), rgba(54, 48, 59, 0.2));
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    padding: 0.5rem;
+}
+
+.poster-deadpool {
+    width: 100%;
+    height: 47%;
+    border-radius: 10px;
+    background: url(./img/deadpool.jpg) no-repeat center / cover;
+}
+
+.container-clone h1 {
+    font-size: 1.9rem;
+    font-family: 'Squada One', cursive;
+    color: var(--color-two);
+}
+
+.container-clone h2 {
+    font-size: 1.6rem;
+    font-family: 'Teko', sans-serif;
+    color: var(--color-four);
+    font-weight: lighter;
+    line-height: 100%;
+}
+
+.star-clone {
+    width: 23%;
+    height: 30%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 53%;
+    right: 5%;
+}
+
+.star-clone i {
+    color: var(--color-two);
+}
+
+.star-clone h2 {
+    font-family: 'Teko', sans-serif;
+    color: var(--color-four);
+    font-weight: lighter;
+}
+
+.info-clone {
+    width: 70%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-clone h1{
+    color: var(--color-four);
+    font-family: 'Teko', sans-serif;
+    font-size: 1.4rem;
+}
+
+.info-clone h2{
+    color: var(--color-four);
+    font-family: 'Teko', sans-serif;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+.line {
+    width: 100%;
+    height: 0.5%;
+    background-color: var(--color-four);
+    border-radius: 10px;
+}
+
+.summary {
+    width: 100%;
+    height: 25%;
+    top: 2%;
+    position: relative;
+}
+
+.summary h1{
+    font-family: 'Teko', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-four);
+}
+
+.summary p{
+    font-family: 'Teko', sans-serif;
+    font-size: 1rem;
+    line-height: 110%;
+    color: var(--color-four);
+}
+
+.button-clone {
+    width: 100%;
+    height: 6%;
+    top: 2%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.button-clone button {
+    width: 48.5%;
+    height: 100%;
+    background-color: var(--color-three);
+    border: none;
+    border-radius: 10px;
+    color: var(--color-four);
+    font-family: 'Squada One', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.container-secondClone {
+    width: 17.5%;
+    height: 27.7%;
+    background-color: #36303C;
+    position: absolute;
+    border-radius: 10px;
+    right: 0.5%;
+    bottom: 0.5%;
+    padding: 0.2rem 0.5rem;
+    border: 2px solid var(--color-four);
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.1), rgba(54, 48, 59, 0.2));
+    background-color: transparent;
+}
+
+.container-secondClone h1 {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-four);
+}
+
+.content-secondClone {
+    width: 100%;
+    height: 40%;
+    background-color: var(--color-one);
+    margin-top: 2px;
+    margin-bottom: 7px;
+    border-radius: 10px;
+    padding: 0.3rem;
+    display: flex;
+}
+
+.poster-theConjuring {
+    width: 30%;
+    height: 100%;
+    background: url(./img/Conjuring.jpg) no-repeat center / cover;
+    border-radius: 10px;
+}
+
+.info-secondClone {
+    width: 70%;
+    margin-left: 3%;
+    color: var(--color-four);
+    position: relative;
+}
+
+.info-secondClone h1 {
+    font-family: 'Squada One', cursive;
+    font-size: 1.1rem;
+    color: var(--color-two);
+}
+
+.info-secondClone h2 {
+    font-family: 'Teko', sans-serif;
+    font-weight: lighter;
+    font-size: 1.2rem;
+}
+
+.publised-theConjuring {
+    width: 12%;
+    height: 40%;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.publised-theConjuring i {
+    font-size: 1rem;
+}
+
+.publised-theConjuring h2 {
+    font-weight: lighter;
+    font-family: 'Teko', sans-serif;
+    font-size: 0.8rem;
+}
+
+.duration-theConjuring {
+    width: 50%;
+    height: 40%;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+}
+
+.duration-theConjuring i {
+    font-size: 1rem;
+}
+
+.duration-theConjuring h2 {
+    font-weight: lighter;
+    font-family: 'Teko', sans-serif;
+    font-size: 0.8rem;
+}
+
+.content-secondClone button {
+    width: 55%;
+    height: 30%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.8rem;
+    font-family: 'Squada One', cursive;
+    background-color: var(--color-three);
+    color: var(--color-four);
+}
+
+.poster-antman {
+    width: 30%;
+    height: 100%;
+    background: url(./img/antman.jpg) no-repeat center / cover;
+    border-radius: 10px;
+}
+
+.publised-antman {
+    width: 12%;
+    height: 40%;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.publised-antman i {
+    font-size: 1rem;
+}
+
+.publised-antman h2 {
+    font-weight: lighter;
+    font-family: 'Teko', sans-serif;
+    font-size: 0.8rem;
+}
+
+.duration-antman {
+    width: 50%;
+    height: 40%;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+}
+
+.duration-antman i {
+    font-size: 1rem;
+}
+
+.duration-antman h2 {
+    font-weight: lighter;
+    font-family: 'Teko', sans-serif;
+    font-size: 0.8rem;
+}
+
+/*@media screen and (min-width: 376px) {
+    .nav-container, .container-clone, .container-secondClone {
+        display: none;
+    }
+
+    .container-main {
+        width: 100%;
+    }
+}
