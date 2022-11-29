@@ -10,7 +10,6 @@ body {
     background: linear-gradient(45deg, #E22955, #36303C);
     display: flex;
     position: relative;
-    /*overflow: hidden;*/
 }
 
 :root {
@@ -91,14 +90,23 @@ body {
 .container-main {
     width: 61%;
     height: 100vh;
-    position: relative;
+    position: absolute;
     left: 51%;
     transform: translateX(-50%);
+    top: 10%;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.container-main.active {
+    pointer-events: all;
+    opacity: 1;
 }
 
 .genre {
-    width: 100%;
-    height: 12%;
+    width: 61%;
+    height: 10.2%;
     background-color: var(--color-one);
     justify-content: space-around;
     align-items: center;
@@ -107,12 +115,15 @@ body {
     font-size: 2rem;
     font-family: 'Teko', sans-serif;
     font-weight: bold;
-    color: var(--color-four);
-    position: relative;
+    position: absolute;
+    left: 51%;
+    transform: translateX(-50%);
 }
 
 .genre div {
     cursor: pointer;
+    color: var(--color-four);
+    text-decoration: none;
 }
 
 .search-box {
@@ -124,7 +135,6 @@ body {
     background-color: var(--color-four);
     border-radius: 10px;
     position: relative;
-    z-index: 1;
     justify-content: center;
 }
 
@@ -192,7 +202,7 @@ body {
     position: relative;
 }
 
-.container-slide {
+.slider-action, .slider-adventure, .slider-comedy, .slider-horror {
     width: 100%;
     height: 100%;
     flex: 0 0 100%;
@@ -200,22 +210,85 @@ body {
     position: absolute;
 }
 
-.container-slide.doctor-strange {
+/********************FILM ACTION*******************/
+
+.slider-action.doctor-strange {
     background: url(./img/doctorstrange.jpg) no-repeat center / cover;
 }
 
-.container-slide.spiderman {
+.slider-action.spiderman {
     background: url(./img/spiderman.jpg) no-repeat center / cover;
     transform: translateX(100%);
 }
 
-.container-slide.avengers {
+.slider-action.avengers {
     background: url(./img/avengers.jpg) no-repeat center / cover;
     transform: translateX(100%);
 }
 
-.container-slide.flash {
+.slider-action.flash {
     background: url(./img/flash.jpg) no-repeat center / cover;
+    transform: translateX(100%);
+}
+
+/********************FILM ADVENTURE*******************/
+
+.slider-adventure.jumanji {
+    background: url(./img/jumanji.jpeg) no-repeat center / cover;
+}
+
+.slider-adventure.dora {
+    background: url(./img/dora.jpg) no-repeat center / cover;
+    transform: translateX(100%);
+}
+
+.slider-adventure.the-hobbit {
+    background: url(./img/thehobbit.jpg) no-repeat top / cover;
+    transform: translateX(100%);
+}
+
+.slider-adventure.fantastic-beast {
+    background: url(./img/dumbledore.jpg) no-repeat top / cover;
+    transform: translateX(100%);
+}
+
+/********************FILM COMEDY*******************/
+.slider-comedy.hatewedding {
+    background: url(./img/thepeople.jpg) no-repeat top / cover;
+}
+
+.slider-comedy.crocodile {
+    background: url(./img/crocodile.jpeg) no-repeat top / cover;
+    transform: translateX(100%);
+}
+
+.slider-comedy.disenchanted {
+    background: url(./img/disenchanted.jpeg) no-repeat center / cover;
+    transform: translateX(100%);
+}
+
+.slider-comedy.christmas {
+    background: url(./img/christmas.jpg) no-repeat top / cover;
+    transform: translateX(100%);
+}
+
+/********************FILM HORROR*******************/
+.slider-horror.the-conjuring1 {
+    background: url(./img/theconjuring.jpg) no-repeat top / cover;
+}
+
+.slider-horror.the-forest {
+    background: url(./img/theforest.jpg) no-repeat top / cover;
+    transform: translateX(100%);
+}
+
+.slider-horror.insidious {
+    background: url(./img/insidious.jpg) no-repeat center / cover;
+    transform: translateX(100%);
+}
+
+.slider-horror.hallowen {
+    background: url(./img/halloween.jpg) no-repeat top / cover;
     transform: translateX(100%);
 }
 
@@ -310,19 +383,19 @@ body {
     cursor: pointer;
 }
 
-.dot-slide {
+.box-dot-action, .box-dot-adventure, .box-dot-comedy, .box-dot-horror {
     position: absolute;
     width: 20%;
     height: 5%;
     justify-content: space-between;
     align-items: center;
     display: flex;
-    top: 55%;
+    top: 44%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.dot {
+.dot-action, .dot-adventure, .dot-comedy, .dot-horror {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -334,7 +407,7 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
-.dot.active {
+.dot-action.active, .dot-adventure.active, .dot-comedy.active, .dot-horror.active {
     background-color: var(--color-four);
 }
 
@@ -347,7 +420,7 @@ body {
     position: relative;
 }
 
-.recomended-slider {
+.recomended-slider-action, .recomended-slider-adventure, .recomended-slider-comedy, .recomended-slider-horror {
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -379,6 +452,7 @@ body {
     bottom: 0;
 }
 
+/*****************RECOMENDED ACTION*******************/
 .deadpool {
     background: url(./img/deadpool.jpg) no-repeat center / cover;
 }
@@ -415,7 +489,118 @@ body {
     background: url(./img/thorragnarok.jpg) no-repeat center / cover;
 }
 
-.deadpool, .star-wars, .black-widow, .wanda-vision, .thor-thunder, .captain-marvel, .black-panther, .guardian, .thor-ragnarok {
+/*****************RECOMENDED ADVENTURE*******************/
+.journey {
+    background: url(./img/journey2.jpg) no-repeat center / cover;
+}
+
+.avatar {
+    background: url(./img/avatar.jpg) no-repeat center / cover;
+}
+
+.jurassic-world {
+    background: url(./img/jurassicworld.jpg) no-repeat center / cover;
+}
+
+.giant-slayer {
+    background: url(./img/jack.jpg) no-repeat center / cover;
+}
+
+.dolittle {
+    background: url(./img/dolittle.jpg) no-repeat center / cover;
+}
+
+.junglecruise {
+    background: url(./img/junglecruise.jpg) no-repeat center / cover;
+}
+
+.malefica {
+    background: url(./img/malefica.jpg) no-repeat center / cover;
+}
+
+.maze-runner {
+    background: url(./img/mazerunner.jpg) no-repeat center / cover;
+}
+
+.dune {
+    background: url(./img/dune.jpg) no-repeat center / cover;
+}
+
+/*****************RECOMENDED COMEDY*******************/
+.slumberland {
+    background: url(./img/slumberland.jpg) no-repeat center / cover;
+}
+
+.lost-lotteries {
+    background: url(./img/thelostlotteries.jpg) no-repeat center / cover;
+}
+
+.nice-view {
+    background: url(./img/niceview.png) no-repeat center / cover;
+}
+
+.free-guy {
+    background: url(./img/freeguy.jpg) no-repeat center / cover;
+}
+
+.instant-family {
+    background: url(./img/instantfamily.jpg) no-repeat center / cover;
+}
+
+.yes-day {
+    background: url(./img/yesday.jpg) no-repeat center / cover;
+}
+
+.the-millers {
+    background: url(./img/themillers.jpg) no-repeat center / cover;
+}
+
+.captain-fantastic {
+    background: url(./img/captainfantastic.jpg) no-repeat center / cover;
+}
+
+.jojo-rabbit {
+    background: url(./img/jojorabbit.jpg) no-repeat center / cover;
+}
+
+/*****************RECOMENDED HORROR*******************/
+.quite-place {
+    background: url(./img/quietplace.jpg) no-repeat top / cover;
+}
+
+.crooked-man {
+    background: url(./img/crookedman.jpg) no-repeat bottom / cover;
+}
+
+.it {
+    background: url(./img/it.jpg) no-repeat top / cover;
+}
+
+.smile {
+    background: url(./img/smile.jpg) no-repeat center / cover;
+}
+
+.pearl {
+    background: url(./img/pearl.jpg) no-repeat center / cover;
+}
+
+.barbarrian {
+    background: url(./img/barbarrian.jpg) no-repeat center / cover;
+}
+
+.terrifer {
+    background: url(./img/terrifier.jpg) no-repeat center / cover;
+}
+
+.ouija {
+    background: url(./img/ouija.jpg) no-repeat center / cover;
+}
+
+.piggy {
+    background: url(./img/piggy.jpg) no-repeat center / cover;
+}
+
+.deadpool, .star-wars, .black-widow, .wanda-vision, .thor-thunder, .captain-marvel, .black-panther, .guardian, .thor-ragnarok, .journey,.avatar, .jurassic-world, .giant-slayer, .dolittle, .junglecruise, .malefica, .maze-runner, .dune, .slumberland, .lost-lotteries, .nice-view, .free-guy, .instant-family, .yes-day, .the-millers, .captain-fantastic, .jojo-rabbit, .quite-place, .crooked-man, .it, .smile, .pearl, .barbarrian, .terrifer, .ouija, .piggy {
     position: relative;
 }
 
@@ -515,13 +700,36 @@ body {
     background-color: transparent;
     backdrop-filter: blur(5px);
     padding: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s ease-in-out;
 }
 
-.poster-deadpool {
+.container-clone.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.poster-bullet-train, .poster-northman, .poster-horrible, .poster-wrong-turn {
     width: 100%;
     height: 47%;
     border-radius: 10px;
-    background: url(./img/deadpool.jpg) no-repeat center / cover;
+}
+
+.poster-bullet-train {
+    background: url(./img/bullettrain.jpg) no-repeat center / cover;
+}
+
+.poster-northman {
+    background: url(./img/thenorthman.jpg) no-repeat center / cover;
+}
+
+.poster-horrible {
+    background: url(./img/horriblebosses.jpg) no-repeat top / cover;
+}
+
+.poster-wrong-turn {
+    background: url(./img/wrongturn.jpg) no-repeat center / cover;
 }
 
 .container-clone h1 {
