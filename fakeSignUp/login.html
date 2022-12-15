@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie</title>
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="logo">NETBLIPS</div>
+    <div class="container-signup">
+        <header>Sign Up</header>
+        <form action="https://netblips.netlify.app/?">
+            <!---username-->
+            <div class="content-input email">
+                <div class="box-input">
+                    <input type="email" placeholder="Enter your email" class="text-email">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="box-error email-error">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p>Please enter a valid email</p>
+                </div>
+            </div>
+            <!---password-->
+            <div class="content-input password">
+                <div class="box-input">
+                    <input type="password" placeholder="Create your password" class="text-password">
+                    <i class="fa-solid fa-eye-slash show-hide"></i>
+                </div>
+                <div class="box-error password-error">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p>Please enter atleast 8 character with number, symbol, small and capital letter</p>
+                </div>
+            </div>
+            <!---Confirm password-->
+            <div class="content-input passwords">
+                <div class="box-input">
+                    <input type="password" placeholder="Confirm your password" class="text-passwords">
+                    <i class="fa-solid fa-eye-slash show-hide"></i>
+                </div>
+                <div class="box-error passwords-error">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p>Password don't match</p>
+                </div>
+            </div>
+            <div class="box-submit">
+                <input type="submit" value="Create Account">
+            </div>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

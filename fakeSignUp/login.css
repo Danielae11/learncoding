@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-one : #36303C;
+    --color-two : #E2D4FF;
+    --color-three : #ef1b4c;
+    --color-four : #FFFFFF;
+}
+
+body {
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg, #E22955, #36303C);
+}
+
+.logo {
+    margin-bottom: 30px;
+    font-family: 'Squada One', cursive;
+    font-size: 3rem;
+    color: var(--color-three);
+}
+
+.container-signup {
+    max-width: 300px;
+    width: 100%;
+    background-color: var(--color-four);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container-signup header {
+    font-size: 1.7rem;
+    font-family: 'Squada One', cursive;
+    color: var(--color-one);
+}
+
+.container-signup form {
+    margin-top: 20px;
+}
+
+.content-input {
+    margin-bottom: 15px;
+}
+
+.box-input, .box-submit {
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+}
+
+.box-input {
+    width: 100%;
+    border: 1px solid var(--color-one);
+    border-radius: 10px;
+    margin-bottom: 4px;
+    padding: 10px;
+    height: 40px;
+}
+
+.invalid .box-input {
+    border: 1px solid var(--color-three);
+}
+
+.box-input input {
+    width: 80%;
+    border: none;
+    outline: none;
+}
+
+.box-input i {
+    font-size: 0.8rem;
+    color: var(--color-one);
+    cursor: pointer;
+}
+
+.box-error {
+    display: none;
+    color: var(--color-three);
+}
+
+.invalid .box-error {
+    display: flex;
+}
+
+.box-error i {
+    margin-right: 3px;
+}
+
+.box-error p {
+    font-size: 0.8rem;
+}
+
+.box-submit {
+    width: 100%;
+    height: 40px;
+}
+
+.box-submit input {
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--color-four);
+    background-color: var(--color-three);
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.box-submit input:hover {
+    background-color: var(--color-one);
+}
