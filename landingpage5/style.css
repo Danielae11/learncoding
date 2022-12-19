@@ -1,0 +1,1209 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 125vh;
+    background: linear-gradient(45deg, #E22955, #36303C);
+    display: flex;
+    position: relative;
+    overflow-x: hidden;
+}
+
+:root {
+    --color-one : #36303C;
+    --color-two : #E2D4FF;
+    --color-three : #E22955;
+    --color-four : #FFFFFF;
+}
+
+.logo, .search-box, .search-box i, .movie-name, .content-nav-menu i {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.nav-container, .search-box ul, .description, .description-recomended, .container-clone, .container-secondClone, .content-nav-menu, .movie-name {
+    background: linear-gradient(-45deg, rgba(54, 48, 59, 0.3), rgba(54, 48, 59, 1));
+    background-color: transparent;
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+}
+
+.logo {
+    width: 100%;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color-three);
+    font-family: 'Squada One', cursive;
+}
+
+.nav-container {
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    border: 2px solid var(--color-four);
+    padding: 0 1rem;
+    z-index: 3;
+}
+
+.nav-content {
+    width: 100%;
+    height: 27%;
+    transform: translateY(10%);
+    margin-bottom: 19%;
+    color: var(--color-four);
+}
+
+.social {
+    margin-top: 28%;
+}
+
+.general {
+    margin-top: -12%;
+}
+
+.nav-content h1 {
+    font-size: 2.2rem;
+    font-family: 'Teko', sans-serif;
+}
+
+.container-button, .container-button-home {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-four);
+    cursor: pointer;
+}
+
+.container-button.indicator, .container-button-home, .genre div.indicator {
+    color: var(--color-three);
+}
+
+.container-button i, .container-button-home i {
+    font-size: 1.4rem;
+    margin-right: 7%;
+}
+
+.container-button h2, .container-button-home h2 {
+    font-family: 'Teko', sans-serif;
+    font-weight: lighter;
+    font-size: 2rem;
+    line-height: 120%;
+}
+
+.container-main {
+    width: 61%;
+    height: 100vh;
+    position: absolute;
+    left: 51%;
+    transform: translateX(-50%);
+    top: 10%;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.container-main.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.genre {
+    width: 61%;
+    height: 10.2%;
+    background-color: var(--color-one);
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-family: 'Teko', sans-serif;
+    font-weight: bold;
+    position: absolute;
+    left: 51%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.genre div {
+    cursor: pointer;
+    color: var(--color-four);
+    text-decoration: none;
+}
+
+.search-box {
+    width: 25%;
+    height: 50%;
+    flex-direction: column;
+    background-color: var(--color-four);
+    border-radius: 10px;
+    position: relative;
+}
+
+.search-box input {
+    height: 50%;
+    width: 60%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 0.9rem;
+    margin-left: -20%;
+}
+
+.search-box i {
+    width: 23%;
+    height: 100%;
+    background-color: var(--color-three);
+    border-radius: 0px 10px 10px 0px;
+    right: -0.6%;
+    position: absolute;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.search-box ul {
+    width: 100%;
+    margin-top: 2px;
+    padding: 0.4rem;
+    border: 1px solid var(--color-four);
+    position: absolute;
+    top: 100%;
+    display: none;
+}
+
+.search-box ul.show {
+    display: block;
+}
+
+.search-box ul li {
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Teko', sans-serif;
+    font-weight: lighter;
+    color: var(--color-four);
+    margin-bottom: 7px;
+    list-style: none;
+    border-bottom: 1px solid var(--color-four);
+    cursor: pointer;
+}
+
+.box-slide {
+    width: 100%;
+    height: 50%;
+    margin-top: 1%;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+}
+
+.slider-action, .slider-adventure, .slider-comedy, .slider-horror {
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+}
+
+.slider-action img, .slider-adventure img, .slider-comedy img, .slider-horror img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.slider-action.spiderman, .slider-action.avengers, .slider-action.flash, .slider-adventure.dora, .slider-adventure.the-hobbit, .slider-adventure.fantastic-beast, .slider-comedy.crocodile, .slider-comedy.disenchanted, .slider-comedy.christmas, .slider-horror.the-forest, .slider-horror.insidious, .slider-horror.hallowen {
+    transform: translateX(100%);
+}
+
+.description {
+    width: 230px;
+    height: 100%;
+    color: var(--color-four);
+    padding: 0.4rem;
+    border-radius: 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.description h1 {
+    color: var(--color-three);
+    font-family: 'Squada One', cursive;
+}
+
+.description h3 {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    margin-bottom: -3%;
+}
+
+.description h2 {
+    font-family: 'Teko', sans-serif;
+    font-weight: bold;
+}
+
+.description p {
+    font-family: 'Teko', sans-serif;
+    font-weight: lighter;
+    margin-bottom: 3%;
+}
+
+.publised {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.publised i, .duration i {
+    margin-right: 10%;
+    font-size: 1.2rem;
+}
+
+.publised h2 {
+    margin-top: 4%;
+    font-weight: lighter;
+    font-family: 'Teko', sans-serif;
+}
+
+.duration {
+    width: 80%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.duration h2 {
+    margin-top: 2%;
+    font-weight: lighter;
+    font-family: 'Teko', sans-serif;
+}
+
+.duration i {
+    margin-right: 5%;
+    font-size: 1.2rem;
+}
+
+.button-description {
+    width: 100%;
+    height: 12%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.button-description button {
+    width: 48.5%;
+    height: 100%;
+    background-color: var(--color-three);
+    border: none;
+    border-radius: 10px;
+    color: var(--color-four);
+    font-family: 'Squada One', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.box-dot-action, .box-dot-adventure, .box-dot-comedy, .box-dot-horror {
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    top: 44%;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 5px;
+}
+
+.dot-action, .dot-adventure, .dot-comedy, .dot-horror {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--color-four);
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.155), rgba(0, 0, 0, 0.1));
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.dot-action.active, .dot-adventure.active, .dot-comedy.active, .dot-horror.active {
+    background-color: var(--color-four);
+}
+
+.container-recomended {
+    width: 100%;
+    height: 45%;
+    margin-top: 7%;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+}
+
+.recomended-slider-action, .recomended-slider-adventure, .recomended-slider-comedy, .recomended-slider-horror {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+}
+
+.recomended {
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    display: flex;
+    position: relative;
+}
+
+.text-recomended {
+    position: absolute;
+    font-family: 'Teko', sans-serif;
+    font-size: 2.3rem;
+    color: var(--color-four);
+}
+
+.recomended-film {
+    width: 32.5%;
+    height: 100%;
+    border-radius: 10px;
+    bottom: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.recomended-film img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.description-recomended {
+    width: 100%;
+    height: 35%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0px 0px 10px 10px;
+    padding: 0 0.5rem;
+}
+
+.description-recomended h1 {
+    font-family: 'Squada One', cursive;
+    color: var(--color-two);
+    font-size: 1.6rem;
+}
+
+.description-recomended h3 {
+    font-family: 'Teko', sans-serif;
+    font-weight: lighter;
+    color: var(--color-four);
+    font-size: 1.2rem;
+}
+
+.star-recomended {
+    width: 23%;
+    height: 30%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 20%;
+    right: 4%;
+}
+
+.star-recomended i {
+    color: var(--color-two);
+}
+
+.star-recomended h2 {
+    font-family: 'Teko', sans-serif;
+    color: var(--color-four);
+    font-weight: lighter;
+}
+
+.button-recomended {
+    width: 100%;
+    height: 40%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.button-recomended button {
+    width: 48.5%;
+    height: 100%;
+    background-color: var(--color-three);
+    border: none;
+    border-radius: 10px;
+    color: var(--color-four);
+    font-family: 'Squada One', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+.button-recomended button:hover {
+    background-color: var(--color-four);
+    color: var(--color-three);
+}
+
+.arrow-box {
+    position: relative;
+    width: 20%;
+    height: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1%;
+}
+
+.arrow-box i {
+    font-size: 2rem;
+    color: var(--color-four);
+    cursor: pointer;
+}
+
+.container-clone {
+    width: 17.5%;
+    height: 70%;
+    position: absolute;
+    right: 0.5%;
+    top: 1%;
+    border: 2px solid var(--color-four);
+    padding: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s ease-in-out;
+}
+
+.container-clone.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.poster-bullet-train, .poster-northman, .poster-horrible, .poster-wrong-turn {
+    width: 100%;
+    height: 47%;
+    border-radius: 10px;
+}
+
+.poster-bullet-train {
+    background: url(./img/bullettrain.jpg) no-repeat center / cover;
+}
+
+.poster-northman {
+    background: url(./img/thenorthman.jpg) no-repeat center / cover;
+}
+
+.poster-horrible {
+    background: url(./img/horriblebosses.jpg) no-repeat top / cover;
+}
+
+.poster-wrong-turn {
+    background: url(./img/wrongturn.jpg) no-repeat center / cover;
+}
+
+.container-clone h1 {
+    font-size: 1.9rem;
+    font-family: 'Squada One', cursive;
+    color: var(--color-two);
+}
+
+.container-clone h2 {
+    font-size: 1.6rem;
+    font-family: 'Teko', sans-serif;
+    color: var(--color-four);
+    font-weight: lighter;
+    line-height: 100%;
+}
+
+.star-clone {
+    width: 23%;
+    height: 30%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 53%;
+    right: 5%;
+}
+
+.star-clone i {
+    color: var(--color-two);
+}
+
+.star-clone h2 {
+    font-family: 'Teko', sans-serif;
+    color: var(--color-four);
+    font-weight: lighter;
+}
+
+.info-clone {
+    height: 10%;
+    display: flex;
+}
+
+.info-clone h1{
+    color: var(--color-four);
+    font-family: 'Teko', sans-serif;
+    font-size: 1.4rem;
+    margin-right: 12px;
+}
+
+.info-clone h2{
+    color: var(--color-four);
+    font-family: 'Teko', sans-serif;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+.line {
+    width: 100%;
+    height: 0.5%;
+    background-color: var(--color-four);
+    border-radius: 10px;
+}
+
+.summary {
+    width: 100%;
+    position: relative;
+}
+
+.summary h1{
+    font-family: 'Teko', sans-serif;
+    font-size: 1.4rem;
+    color: var(--color-four);
+}
+
+.summary p{
+    font-family: 'Teko', sans-serif;
+    font-size: 0.9rem;
+    line-height: 105%;
+    color: var(--color-four);
+}
+
+.button-clone {
+    width: 100%;
+    height: 6%;
+    top: 2%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.button-clone button {
+    width: 48.5%;
+    height: 100%;
+    background-color: var(--color-three);
+    border: none;
+    border-radius: 10px;
+    color: var(--color-four);
+    font-family: 'Squada One', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.container-secondClone {
+    width: 17.5%;
+    height: 27.7%;
+    position: absolute;
+    right: 0.5%;
+    bottom: 0.5%;
+    padding: 0.2rem 0.5rem;
+    border: 2px solid var(--color-four);
+}
+
+.container-secondClone h1 {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-four);
+}
+
+.content-secondClone {
+    width: 100%;
+    height: 40%;
+    background-color: var(--color-one);
+    margin-top: 2px;
+    margin-bottom: 7px;
+    border-radius: 10px;
+    padding: 0.3rem;
+    display: flex;
+}
+
+.poster-theConjuring {
+    width: 30%;
+    height: 100%;
+    background: url(./img/Conjuring.jpg) no-repeat center / cover;
+    border-radius: 10px;
+}
+
+.info-secondClone {
+    width: 70%;
+    margin-left: 3%;
+    color: var(--color-four);
+    position: relative;
+}
+
+.info-secondClone h1 {
+    font-family: 'Squada One', cursive;
+    font-size: 1.1rem;
+    color: var(--color-two);
+}
+
+.info-secondClone h2 {
+    font-family: 'Teko', sans-serif;
+    font-weight: lighter;
+    font-size: 1.2rem;
+}
+
+.publised-theConjuring {
+    width: 12%;
+    height: 40%;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.publised-theConjuring i {
+    font-size: 1rem;
+}
+
+.publised-theConjuring h2 {
+    font-weight: lighter;
+    font-family: 'Teko', sans-serif;
+    font-size: 0.8rem;
+}
+
+.duration-theConjuring {
+    width: 50%;
+    height: 40%;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+}
+
+.duration-theConjuring i {
+    font-size: 1rem;
+}
+
+.duration-theConjuring h2 {
+    font-weight: lighter;
+    font-family: 'Teko', sans-serif;
+    font-size: 0.8rem;
+}
+
+.content-secondClone button {
+    width: 55%;
+    height: 30%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.8rem;
+    font-family: 'Squada One', cursive;
+    background-color: var(--color-three);
+    color: var(--color-four);
+}
+
+.poster-antman {
+    width: 30%;
+    height: 100%;
+    background: url(./img/antman.jpg) no-repeat center / cover;
+    border-radius: 10px;
+}
+
+.publised-antman {
+    width: 12%;
+    height: 40%;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.publised-antman i {
+    font-size: 1rem;
+}
+
+.publised-antman h2 {
+    font-weight: lighter;
+    font-family: 'Teko', sans-serif;
+    font-size: 0.8rem;
+}
+
+.duration-antman {
+    width: 50%;
+    height: 40%;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+}
+
+.duration-antman i {
+    font-size: 1rem;
+}
+
+.duration-antman h2 {
+    font-weight: lighter;
+    font-family: 'Teko', sans-serif;
+    font-size: 0.8rem;
+}
+
+.content-nav-menu {
+    width: 79.8%;
+    height: 100vh;
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    border: 2px solid var(--color-four);
+    z-index: 2;
+    padding: 0.5rem;
+    transform: translateX(-126%);
+    transition: all 0.5s ease-out;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.content-nav-menu.remove {
+    display: none;
+}
+
+.film-playlist, .film-history {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-nav-menu i {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-four);
+    right: 1%;
+    top: 1%;
+    cursor: pointer;
+    color: var(--color-four);
+    transition: all 0.2s ease-out;
+}
+
+.content-nav-menu i:hover {
+    background-color: var(--color-four);
+    color: var(--color-one);
+}
+
+.content-playlist, .content-history {
+    width: 24.3%;
+    height: 310px;
+    border-radius: 10px;
+    margin: 0.2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.content-playlist img, .content-history img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.content-playlist img:hover, .content-history img:hover {
+    width: 110%;
+    height: 110%;
+}
+
+.movie-name {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    bottom: 0;
+    color: var(--color-two);
+    border-radius: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .nav-content h1 {
+        font-size: 1.9rem;
+    }
+
+    .nav-content h2{
+        font-size: 1.7rem;
+        line-height: 160%;
+    }
+
+    .container-clone h1 {
+        font-size: 1.5rem;
+    }
+
+    .container-clone h2 {
+        font-size: 1.2rem;
+    }
+
+    .info-clone h1 {
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+
+    .info-clone h2 {
+        font-size: 0.9rem;
+    }
+
+    .summary p {
+        font-size: 0.9rem;
+    }
+
+    .button-clone button {
+        font-size: 0.9rem;
+    }
+
+    .button-recomended button {
+        font-size: 1rem;
+    }
+
+    .social h1 {
+        margin-top: 60px;
+    }
+
+    .general h1 {
+        margin-top: 35px;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    .nav-content h1{
+        font-size: 1.8rem;
+    }
+
+    .nav-content h2{
+        font-size: 1.3rem;
+        line-height: 200%;
+    }
+
+    .container-clone, .container-secondClone {
+        display: none;
+    }
+
+    .logo {
+        font-size: 2.6rem;
+    }
+
+    .container-main {
+        width: 79%;
+        left: unset;
+        right: 0;
+        transform: translateX(0%);
+    }
+
+    .genre {
+        width: 79%;
+        left: unset;
+        transform: translateX(0%);
+        right: 0;
+    }
+
+    .button-recomended button {
+        font-size: 1.1rem;
+    }
+    
+}
+
+@media screen and (max-width: 860px) {
+    .container-main {
+        top: 9%;        
+    }
+
+    .nav-container h2 {
+        font-size: 0.9rem;
+        line-height: 270%;
+    }
+
+    .logo {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .genre {
+        font-size: 1.4rem;
+        height: 9%;
+    }
+
+    .search-box {
+        height: 40%;
+        border-radius: 5px;
+    }
+
+    .search-box input {
+        font-size: 0.7rem;
+    }
+
+    .search-box i {
+        font-size: 1rem;
+        border-radius: 0px 5px 5px 0px;
+    }
+
+    .description {
+        width: 190px;
+        height: 100%;
+    }
+
+    .description h1 {
+        font-size: 1.5rem;
+    }
+
+    .description h2 {
+        font-size: 1.2rem;
+    }
+
+    .description h3 {
+        font-size: 1rem;
+    }
+
+    .dot-action, .dot-adventure, .dot-comedy, .dot-horror {
+        width: 20px;
+        height: 20px;
+    }
+
+    .container-main button {
+        font-size: 0.8rem;
+    }
+
+    .text-recomended {
+        font-size: 1.6rem;
+    }
+
+    .container-recomended {
+        height: 40%;
+    }
+
+    .description-recomended h1 {
+        font-size: 1.4rem;
+    }
+
+    .button-recomended button {
+        height: 30px;
+        border-radius: 5px;
+    }
+
+    .star-recomended {
+        top: 29%;
+        right: 6%;
+        font-size: 0.8rem;
+    }
+
+    body {
+        height: 115vh;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    body {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-container {
+        width: 15%;
+        padding: 1%;
+    }
+
+    .nav-container h1 {
+        font-size: 1.2rem;
+    }
+
+    .nav-container h2 {
+        display: none;
+    }
+
+    .container-main, .genre {
+        width: 84%;
+    }
+
+    .genre{
+        width: 84%;
+        font-size: 1.1rem;
+    }
+
+    .container-button {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .search-box {
+        height: 50%;
+    }
+
+    .search-box input {
+        font-size: 0.6rem;
+        margin-left: -27%;
+    }
+
+    .box-slide {
+        height: 35%;
+    }
+
+    .description {
+        width: 150px;
+    }
+
+    .description h1 {
+        font-size: 1rem;
+    }
+
+    .description h2 {
+        font-size: 0.8rem;
+    }
+
+    .description h3 {
+        font-size: 0.8rem;
+    }
+
+    .description p {
+        font-size: 0.7rem;
+    }
+
+    .description i {
+        font-size: 0.8rem;
+    }
+
+    .button-description button {
+        font-size: 0.6rem;
+    }
+
+    .button-recomended button {
+        font-size: 0.6rem;
+        height: 23px;
+    }
+
+    .description-recomended h1 {
+        font-size: 1.2rem;
+    }
+
+    .star-recomended {
+        font-size: 0.7rem;
+    }
+
+    .box-dot-action, .box-dot-adventure, .box-dot-comedy, .box-dot-horror { 
+        top: 31%;
+    }
+
+    .dot-action, .dot-adventure, .dot-comedy, .dot-horror {
+        width: 15px;
+        height: 15px;
+    }
+
+    .container-recomended {
+        height: 35%;
+        margin-top: 12%;
+    }
+
+    .text-recomended {
+        margin-top: 8px;
+    }
+    
+    .arrow-box {
+        margin-top: 3%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 0.9rem;
+    }
+
+    .nav-container {
+        height: 650px;
+    }
+
+    .nav-content h1 {
+        font-size: 0.9rem;
+    }
+
+    .genre {
+        font-size: 0.7rem;
+        height: 8%;
+    }
+
+    .container-main {
+        margin-top: 0;
+    }
+
+    .description {
+        width: 100px;
+        padding: 0.2rem;
+    }
+
+    .description h1 {
+        font-size: 0.9rem;
+    }
+
+    .description h2 {
+        font-size: 0.6rem;
+    }
+
+    .description h3 {
+        font-size: 0.5rem;
+    }
+
+    .description p {
+        font-size: 0.6rem;
+    }
+
+    .button-description button {
+        font-size: 0.5rem;
+        height: 21px;
+        border-radius: 8px;
+    }
+
+    .container-recomended {
+        height: 30%;
+        margin-top: 15%;
+    }
+
+    .description-recomended {
+        padding: 0 0.3rem;
+    }
+
+    .description-recomended h1 {
+        font-size: 1rem;
+    }
+
+    .description-recomended h3 {
+        font-size: 0.9rem;
+    }
+
+    .star-recomended {
+        font-size: 0.5rem;
+    }
+
+    .button-recomended button {
+        font-size: 0.5rem;
+    }
+
+    .arrow-box i {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
