@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+@import url('https://fonts.cdnfonts.com/css/harlow-solid-italic');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-one : #302923;
+    --color-two : #B19179;
+    --color-three : #FB8D3C;
+    --color-four : #FFFFFF;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    background: url(./img/background.png) no-repeat center / cover;
+    padding: 30px 40px;
+}
+
+.container-main {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(75.78deg, rgba(217, 217, 217, 0.05) -9%, rgba(0, 0, 0, 0.16) 69.51%);
+    box-shadow: 11px 11px 30px rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.navigation {
+    width: 100%;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 0px 30px;
+    z-index: 2;
+    position: absolute;
+}
+
+.nav-bar {
+    width: 627px;
+    height: 100%;
+    background-color: var(--color-one);
+    border-radius: 0px 0px 20px 20px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 0px 40px;
+    position: relative;
+}
+
+.nav-button {
+    width: 431px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.button-nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    position: relative;
+    color: var(--color-four);
+    font-size: 1rem;
+    font-family: 'Hobo Std';
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.button-nav.indicator {
+    color: var(--color-two);
+}
+
+.indicator-line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-two);
+    bottom: 0;
+    border-radius: 10px;
+}
+
+.nav-bar i {
+    width: 51px;
+    height: 51px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 1.3rem;
+    color: var(--color-four);
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid var(--color-four);
+    transition: all 0.5s ease;
+}
+
+.nav-bar i:hover {
+    background-color: var(--color-two);
+}
+
+.nav-bar i.get-color {
+    background-color: var(--color-two);
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    display: flex;
+}
+
+.ourproduct, .galery {
+    transform: translateX(120%);
+}
+
+.bghome {
+    position: absolute;
+    width: 510px;
+    height: 500px;
+    right: 0;
+    bottom: 0;
+}
+
+.typography {
+    width: 620px;
+    margin-left: 4rem;
+}
+
+.typography p {
+    font-size: 1.5rem;
+    font-family: 'Patua One';
+    color: var(--color-four);
+    padding-right: 3rem;
+}
+
+.choose-coffe {
+    position: absolute;
+    margin-left: 60px;
+    z-index: 4;
+}
+
+.box-choose {
+    width: 100px;
+    height: 100px;
+    background-color: #B19179;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+
+.box-choose:hover {
+    width: 140px;
+}
+
+.box-choose.active {
+    width: 140px;
+}
+
+.coffee1 {
+    width: 51px;
+    height: 64px;
+}
+
+.coffee2 {
+    width: 71px;
+    height: 53px;
+}
+
+.coffee3 {
+    width: 66px;
+    height: 56px;
+}
+
+.coffee4 {
+    width: 68px;
+    height: 60px;
+}
+
+.macchiato, .americano, .cappucino, .vanilla-latte  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 3rem;
+    padding-left: 10rem;
+}
+
+.americano, .cappucino, .vanilla-latte {
+    transform: translateY(110%);
+}
+
+.macchiato img {
+    width: 262px;
+    height: 370px;
+}
+
+.americano img, .cappucino img {
+    width: 367px;
+    height: 274px;
+}
+
+.vanilla-latte img {
+    width: 323px;
+    height: 274px;
+}
+
+.description {
+    width: 500px;
+}
+
+.description h1 {
+    font-size: 3rem;
+    font-family: 'Harlow Solid Italic', sans-serif;
+    color: var(--color-three);
+}
+
+.description p {
+    font-size: 1.3rem;
+    font-family: 'Patua One';
+    color: var(--color-four);
+    margin-bottom: 1rem;
+    padding-right: 4rem;
+}
+
+.description-button span {
+    font-size: 2rem;
+    font-family: 'Patua One';
+    color: var(--color-four);
+}
+
+.description-button button{
+    background: none;
+    border: 2px solid var(--color-four);
+    width: 140px;
+    height: 48px;
+    font-size: 1.2rem;
+    font-family: 'Patua One';
+    color: var(--color-four);
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 2rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.description-button button:hover {
+    background-color: var(--color-two);
+    border: 2px solid var(--color-two);
+}
+
+.galery {
+    justify-content: center;
+    overflow-x: hidden;
+    padding-top: 5rem;
+}
+
+.container-box-galery {
+    width: 1000px;
+    height: 450px;
+}
+
+.content-box-galery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.box-galery {
+    height: 220px;
+    background-color: #B19179;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.box-galery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s ease-in-out;
+}
+
+.box-galery img:hover {
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+}
+
+.container-cart {
+    position: absolute;
+    min-width: 250px;
+    height: 100%;
+    background-color: var(--color-two);
+    z-index: 3;
+    right: 0;
+    border-radius: 20px;
+    font-family: 'Harlow Solid Italic', sans-serif;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+}
+
+.container-cart.show {
+    transform: translateX(0%);
+}
+
+.fa-xmark {
+    position: absolute;
+    left: 3%;
+    top: 1%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-one);
+    color: var(--color-four);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+
+.fa-xmark:hover {
+    background-color: var(--color-four);
+    color: var(--color-one);
+}
+
+.text-cart {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--color-four);
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.content-cart {
+    width: 100%;
+    height: 70%;
+    padding: 0 20px;
+    overflow-x: hidden;
+}
+
+.product-cart {
+    position: relative;
+    width: 100%;
+    height: 25%;
+    background-color: var(--color-one);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    color: var(--color-four);
+    padding: 5px;
+}
+
+.product-cart i {
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-four);
+    color: var(--color-one);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+}
+
+.cappucino-cart {
+    width: 77px;
+    height: 66px;
+}
+
+.macchiato-cart {
+    width: 62px;
+    height: 77px;
+}
+
+.vanillaLatte-cart {
+    width: 70px;
+    height: 60px;
+}
+
+.description-cart h1 {
+    font-size: 1.5rem;
+    color: var(--color-three);
+}
+
+.description-cart h2 {
+    font-size: 1rem;
+    font-family: 'Hobo Std';
+    font-weight: lighter;
+}
+
+.latte h1 {
+    font-size: 1.2rem;
+}
+
+.description-cart input {
+    width: 35px;
+    padding-left: 7px;
+    border-radius: 10px;
+    border: none;
+}
+
+.box-total-cart {
+    position: absolute;
+    width: 100%;
+    height: 13%;
+    bottom: 0;
+    background-color: var(--color-four);
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    border-radius: 20px;
+}
+
+.box-total-cart h1 {
+    color: #302923;
+    font-family: 'Hobo Std';
+    font-size: 1.4rem;
+}
+
+.box-total-cart button {
+    width: 100px;
+    height: 35px;
+    background: var(--color-one);
+    border-radius: 10px;
+    border: none;
+    font-family: 'Patua One';
+    font-size: 1.2rem;
+    color: var(--color-four);
+}
